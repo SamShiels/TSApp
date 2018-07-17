@@ -18,7 +18,7 @@ function GetBooksByCategory(category) {
     return curBooks;
 }
 function Log() {
-    var curCategory = category_1.Category.Fiction;
+    var curCategory = category_1.Category.Poetry;
     var curBooks = GetBooksByCategory(curCategory);
     console.log('Getting books by category: ' + category_1.Category[curCategory]);
     for (var _i = 0, curBooks_1 = curBooks; _i < curBooks_1.length; _i++) {
