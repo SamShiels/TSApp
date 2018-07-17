@@ -26,7 +26,7 @@ function GetBooksByCategory(category: Category): Array<Book> {
 }
 
 function Log() {
-    let curCategory: Category = Category.Science;
+    let curCategory: Category = Category.All;
     let curBooks: Array<Book> = GetBooksByCategory(curCategory);
 
     console.log('Getting books by category: ' + Category[curCategory]);
