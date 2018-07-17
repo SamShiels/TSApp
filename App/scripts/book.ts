@@ -5,7 +5,7 @@ class Book {
     category: Category;
 
     get title() {
-        return this._title.toUpperCase();
+        return this._title.toLocaleLowerCase();
     }
 
     set title(val: string) {

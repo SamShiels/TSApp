@@ -9,18 +9,21 @@ let allBooks: Book[] = [
 
 function GetBooksByCategory(category: Category): Array<Book> {
 
-    let curBooks: Array<Book> = new Array<Book>();
+    let curBooks: Array<Book> = new Array<Book>(); // An array of books which match the category given
     for (let book of allBooks) {
-        if (book.category === category || category === Category.All) {
-            curBooks.push(book);
+        // Unless the category is set to 'All', omit books from the array which do not match the given category
+        if (book.category !== category && category !== Category.All) {
+            // The category requirement is not met, skip this book
+            continue;
         }
+        curBooks.push(book);
     }
 
     return curBooks;
 }
 
 function Log() {
-    let curCategory: Category = Category.Poetry;
+    let curCategory: Category = Category.All;
     let curBooks: Array<Book> = GetBooksByCategory(curCategory);
 
     console.log('Getting books by category: ' + Category[curCategory]);

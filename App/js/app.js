@@ -8,17 +8,20 @@ var allBooks = [
     new book_1.Book('Star Wors', category_1.Category.Fiction)
 ];
 function GetBooksByCategory(category) {
-    var curBooks = new Array();
+    var curBooks = new Array(); // An array of books which match the category given
     for (var _i = 0, allBooks_1 = allBooks; _i < allBooks_1.length; _i++) {
         var book = allBooks_1[_i];
-        if (book.category === category || category === category_1.Category.All) {
-            curBooks.push(book);
+        // Unless the category is set to 'All', omit books from the array which do not match the given category
+        if (book.category !== category && category !== category_1.Category.All) {
+            // The category requirement is not met, skip this book
+            continue;
         }
+        curBooks.push(book);
     }
     return curBooks;
 }
 function Log() {
-    var curCategory = category_1.Category.Poetry;
+    var curCategory = category_1.Category.All;
     var curBooks = GetBooksByCategory(curCategory);
     console.log('Getting books by category: ' + category_1.Category[curCategory]);
     for (var _i = 0, curBooks_1 = curBooks; _i < curBooks_1.length; _i++) {

@@ -7,7 +7,7 @@ var Book = /** @class */ (function () {
     }
     Object.defineProperty(Book.prototype, "title", {
         get: function () {
-            return this._title.toUpperCase();
+            return this._title.toLocaleLowerCase();
         },
         set: function (val) {
             this._title = val;
