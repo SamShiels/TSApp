@@ -1,23 +1,11 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+var Util = /** @class */ (function () {
+    function Util() {
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var Util = /** @class */ (function () {
-        function Util() {
-        }
-        Util.prototype.Sqr = function (input) {
-            // Squares the input value and returns it
-            return input * input;
-        };
-        return Util;
-    }());
-    exports.Util = Util;
-});
+    Util.prototype.Sqr = function (input) {
+        // Squares the input value and returns it
+        return input * input;
+    };
+    return Util;
+}());
+export { Util };
 //# sourceMappingURL=util.js.map

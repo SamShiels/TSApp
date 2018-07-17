@@ -1,47 +1,35 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./book", "./category"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var book_1 = require("./book");
-    var category_1 = require("./category");
-    var allBooks = [
-        new book_1.Book('The Wondeful Adventures of Banana Kid', category_1.Category.Fiction),
-        new book_1.Book('Toilet Thoughts', category_1.Category.Poetry),
-        new book_1.Book('Star Wors', category_1.Category.Fiction),
-        new book_1.Book('The Anatomy of Donald Trump\'s hair', category_1.Category.Science),
-        new book_1.Book('The Study of Farts', category_1.Category.Science),
-        new book_1.Book('Big Momma\'s Bunions', category_1.Category.Fiction)
-    ];
-    function GetBooksByCategory(category) {
-        var curBooks = new Array(); // An array of books which match the category given
-        for (var _i = 0, allBooks_1 = allBooks; _i < allBooks_1.length; _i++) {
-            var book = allBooks_1[_i];
-            // Unless the category is set to 'All', omit books from the array which do not match the given category
-            if (book.category !== category && category !== category_1.Category.All) {
-                // The category requirement is not met, skip this book
-                continue;
-            }
-            curBooks.push(book);
+import { Book } from './book';
+import { Category } from './category';
+var allBooks = [
+    new Book('The Wondeful Adventures of Banana Kid', Category.Fiction),
+    new Book('Toilet Thoughts', Category.Poetry),
+    new Book('Star Wors', Category.Fiction),
+    new Book('The Anatomy of Donald Trump\'s hair', Category.Science),
+    new Book('The Study of Farts', Category.Science),
+    new Book('Big Momma\'s Bunions', Category.Fiction)
+];
+function GetBooksByCategory(category) {
+    var curBooks = new Array(); // An array of books which match the category given
+    for (var _i = 0, allBooks_1 = allBooks; _i < allBooks_1.length; _i++) {
+        var book = allBooks_1[_i];
+        // Unless the category is set to 'All', omit books from the array which do not match the given category
+        if (book.category !== category && category !== Category.All) {
+            // The category requirement is not met, skip this book
+            continue;
         }
-        return curBooks;
+        curBooks.push(book);
     }
-    function Log() {
-        var curCategory = category_1.Category.All;
-        var curBooks = GetBooksByCategory(curCategory);
-        console.log('Getting books by category: ' + category_1.Category[curCategory]);
-        for (var _i = 0, curBooks_1 = curBooks; _i < curBooks_1.length; _i++) {
-            var book = curBooks_1[_i];
-            console.log(book.title);
-        }
+    return curBooks;
+}
+function Log() {
+    var curCategory = Category.All;
+    var curBooks = GetBooksByCategory(curCategory);
+    console.log('Getting books by category: ' + Category[curCategory]);
+    for (var _i = 0, curBooks_1 = curBooks; _i < curBooks_1.length; _i++) {
+        var book = curBooks_1[_i];
+        console.log(book.title);
     }
-    console.log('Start');
-    Log();
-});
+}
+console.log('Start');
+Log();
 //# sourceMappingURL=app.js.map
