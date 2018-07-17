@@ -5,7 +5,10 @@ var category_1 = require("./category");
 var allBooks = [
     new book_1.Book('The Wondeful Adventures of Banana Kid', category_1.Category.Fiction),
     new book_1.Book('Toilet Thoughts', category_1.Category.Poetry),
-    new book_1.Book('Star Wors', category_1.Category.Fiction)
+    new book_1.Book('Star Wors', category_1.Category.Fiction),
+    new book_1.Book('The Anatomy of Donald Trump\'s hair', category_1.Category.Science),
+    new book_1.Book('The Study of Farts', category_1.Category.Science),
+    new book_1.Book('Big Momma\'s Bunions', category_1.Category.Fiction)
 ];
 function GetBooksByCategory(category) {
     var curBooks = new Array(); // An array of books which match the category given

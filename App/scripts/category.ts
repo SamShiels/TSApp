@@ -1,1 +1,1 @@
-export enum Category { Poetry, Fiction, All}
+export enum Category { Poetry, Fiction, Science, All}

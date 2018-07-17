@@ -4,7 +4,10 @@ import { Category } from './category';
 let allBooks: Book[] = [
     new Book('The Wondeful Adventures of Banana Kid', Category.Fiction),
     new Book('Toilet Thoughts', Category.Poetry),
-    new Book('Star Wors', Category.Fiction)
+    new Book('Star Wors', Category.Fiction),
+    new Book('The Anatomy of Donald Trump\'s hair', Category.Science),
+    new Book('The Study of Farts', Category.Science),
+    new Book('Big Momma\'s Bunions', Category.Fiction)
 ];
 
 function GetBooksByCategory(category: Category): Array<Book> {
