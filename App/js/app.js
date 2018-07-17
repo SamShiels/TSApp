@@ -41,6 +41,7 @@
             console.log(book.title);
         }
     }
+    console.log('Start');
     Log();
 });
 //# sourceMappingURL=app.js.map

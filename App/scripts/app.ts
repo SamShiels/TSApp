@@ -36,4 +36,5 @@ function Log() {
     }
 }
 
+console.log('Start');
 Log();
